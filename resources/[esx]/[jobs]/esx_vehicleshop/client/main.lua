@@ -292,6 +292,7 @@ function OpenShopMenu()
 											vehicleProps.plate = newPlate
 											SetVehicleNumberPlateText(vehicle, newPlate)
 											TriggerServerEvent('esx_vehicleshop:setVehicleOwnedSociety', playerData.job.name, vehicleProps)
+											TriggerServerEvent('esx_vehiclelock:registerkey', vehicleProps.plate, GetPlayerServerId(closestPlayer))
 											ESX.ShowNotification(_U('vehicle_purchased'))
 										end)
 

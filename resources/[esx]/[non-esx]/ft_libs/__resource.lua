@@ -88,7 +88,6 @@ exports {
     "AddMenu",
     "RemoveMenu",
     "MenuIsOpen",
-    "CurrentMenu",
     "PrimaryMenu",
     "GetCurrentMenu",
     "GetPrimaryMenu",
@@ -142,6 +141,7 @@ exports {
     "GetEntityInDirection",
     "GetEntityObjectInDirection",
     "GetEntitiesInAround",
+    "CastRayPlayerPedToPoint",
 
     -- Objects
     "GetObjects",

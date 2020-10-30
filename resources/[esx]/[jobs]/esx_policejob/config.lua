@@ -2,13 +2,14 @@ Config                            = {}
 
 Config.DrawDistance               = 100.0
 Config.MarkerType                 = 1
-Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 0.5 }
+Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 1.0 }
 Config.MarkerColor                = { r = 50, g = 50, b = 204 }
 
 Config.EnablePlayerManagement     = true
 Config.EnableArmoryManagement     = true
 Config.EnableESXIdentity          = true -- enable if you're using esx_identity
 Config.EnableNonFreemodePeds      = false -- turn this on if you want custom peds
+Config.EnableSocietyOwnedVehicles = true
 Config.EnableLicenses             = true -- enable if you're using esx_license
 
 Config.EnableHandcuffTimer        = true -- enable handcuff timer? will unrestrain player after the time ends
@@ -24,126 +25,137 @@ Config.PoliceStations = {
 	LSPD = {
 
 		Blip = {
-			Coords  = vector3(425.1, -979.5, 30.7),
+			Pos     = { x = 425.130, y = -979.558, z = 30.711 },
 			Sprite  = 60,
 			Display = 4,
 			Scale   = 1.2,
-			Colour  = 29
+			Colour  = 29,
+		},
+
+		-- https://wiki.rage.mp/index.php?title=Weapons
+		AuthorizedWeapons = {
+			{ name = 'WEAPON_NIGHTSTICK',       price = 200 },
+			{ name = 'WEAPON_COMBATPISTOL',     price = 300 },
+			{ name = 'WEAPON_ASSAULTSMG',       price = 1250 },
+			{ name = 'WEAPON_ASSAULTRIFLE',     price = 1500 },
+			{ name = 'WEAPON_PUMPSHOTGUN',      price = 600 },
+			{ name = 'WEAPON_STUNGUN',          price = 500 },
+			{ name = 'WEAPON_FLASHLIGHT',       price = 80 },
+			{ name = 'WEAPON_FIREEXTINGUISHER', price = 120 },
+			{ name = 'WEAPON_FLAREGUN',         price = 60 },
+			{ name = 'WEAPON_STICKYBOMB',       price = 250 },
+			{ name = 'GADGET_PARACHUTE',        price = 300 },
 		},
 
 		Cloakrooms = {
-			vector3(452.6, -992.8, 30.6)
+			{ x = 452.600, y = -993.306, z = 29.750 },
 		},
 
 		Armories = {
-			vector3(452.68, -982.63, 30.6)
-		},
-
-		Saisi = {
-			vector3(478.43, -985.01, 24.97)
+			{ x = 451.699, y = -980.356, z = 29.689 },
 		},
 
 		Vehicles = {
 			{
-				Spawner    = { x = 454.69, y = -1017.4, z = 28.430 },
-				SpawnPoint = { x = 438.42, y = -1018.3, z = 27.757 },
-				Heading    = 90.0
-			},
-
-			{
-				Spawner    = { x = 473.38, y = -1018.43, z = 28.00 },
-				SpawnPoint = { x = 475.98, y = -1021.65, z = 28.06 },
-				Heading    = 276.11
-			},
-			{
-				Spawner    = { x = -458.20, y = 6017.77, z = 38.00 },
-				SpawnPoint = { x = -466.63, y = 6017.89, z = 31.00 },
-				Heading    = 304.14
-			}
-		},
-
-		VehicleDeleters = {
-			{ x = 462.74, y = -1014.4, z = 28.065 },
-			{ x = 462.40, y = -1019.7, z = 28.104 },
-			{ x = 469.12, y = -1024.52, z = 28.20 },
-			{ x = -477.15, y = 6021.01, z = 32.00 }
-		},
-
-		Helicopters = {
-			{
-				Spawner = vector3(461.1, -981.5, 43.6),
-				InsideShop = vector3(477.0, -1106.4, 43.0),
+				Spawner    = { x = 454.69, y = -1017.40, z = 27.43 },
 				SpawnPoints = {
-					{ coords = vector3(449.5, -981.2, 43.6), heading = 92.6, radius = 10.0 }
+					{ x = 438.42, y = -1018.30, z = 27.75, heading = 90.0, radius = 6.0 },
+					{ x = 441.08, y = -1024.23, z = 28.30, heading = 90.0, radius = 6.0 },
+					{ x = 453.53, y = -1022.20, z = 28.02, heading = 90.0, radius = 6.0 },
+					{ x = 450.97, y = -1016.55, z = 28.10, heading = 90.0, radius = 6.0 }
+				}
+			},
+
+			{
+				Spawner    = { x = 473.38, y = -1018.43, z = 27.00 },
+				SpawnPoints = {
+					{ x = 475.98, y = -1021.65, z = 28.06, heading = 276.11, radius = 6.0 },
+					{ x = 484.10, y = -1023.19, z = 27.57, heading = 302.54, radius = 6.0 }
 				}
 			}
 		},
 
+		Helicopters = {
+			{
+				Spawner    = { x = 466.477, y = -982.819, z = 42.691 },
+				SpawnPoint = { x = 450.04, y = -981.14, z = 42.691 },
+				Heading    = 0.0
+			}
+		},
+
+		VehicleDeleters = {
+			{ x = 462.74, y = -1014.4, z = 27.065 },
+			{ x = 462.40, y = -1019.7, z = 27.104 },
+			{ x = 469.12, y = -1024.52, z = 27.20 }
+		},
+
 		BossActions = {
-			vector3(448.4, -973.2, 30.6)
-		}
-	}
+			{ x = 448.417, y = -973.208, z = 29.689 }
+		},
+
+	},
+
 }
 
+-- https://wiki.rage.mp/index.php?title=Vehicles
 Config.AuthorizedVehicles = {
 	Shared = {
-		{ model = 'sultan', label = 'Véhicule de Formation'},
-		{ model = 'pbus', label = 'Police Prison Bus'},
-		{ model = 'policet', label = 'Fourgon de transport'},
-		{ model = 'riot', label = 'Fourgon Blindé'},
-		{ model = 'riot2', label = 'Fourgon antiémeute'}
+		{
+			model = 'police',
+			label = 'Police Cruiser'
+		},
+		{
+			model = 'pbus',
+			label = 'Police Prison Bus'
+		}
 	},
 
 	recruit = {
-		{ model = 'police', label = 'Cruiser'}
+
 	},
 
 	officer = {
-		{ model = 'police', label = 'Cruiser'},
-		{ model = 'police2', label = 'Buffalo'}
+		{
+			model = 'police3',
+			label = 'Police Interceptor'
+		}
 	},
 
 	sergeant = {
-		{ model = 'police', label = 'Cruiser'},
-		{ model = 'police2', label = 'Buffalo'},
-		{ model = 'police3', label = 'Interceptor'},
-		{ model = 'policeb', label = 'Moto'}
+		{
+			model = 'policet',
+			label = 'Police Transporter'
+		},
+		{
+			model = 'policeb',
+			label = 'Police Bike'
+		}
 	},
 
 	intendent = {
-		{ model = 'police', label = 'Cruiser'},
-		{ model = 'police2', label = 'Buffalo'},
-		{ model = 'police3', label = 'Interceptor'},
-		{ model = 'policeb', label = 'Moto'}
+
 	},
 
 	lieutenant = {
-		{ model = 'police', label = 'Cruiser'},
-		{ model = 'police2', label = 'Buffalo'},
-		{ model = 'police3', label = 'Interceptor'},
-		{ model = 'policeb', label = 'Moto'},
-		{ model = 'police4', label = 'Cruiser Unmarked'}
+		{
+			model = 'riot',
+			label = 'Police Riot'
+		},
+		{
+			model = 'fbi2',
+			label = 'FIB SUV'
+		}
 	},
 
 	chef = {
-		{ model = 'police', label = 'Cruiser'},
-		{ model = 'police2', label = 'Buffalo'},
-		{ model = 'police3', label = 'Interceptor'},
-		{ model = 'policeb', label = 'Police Bike'},
-		{ model = 'police4', label = 'Cruiser Unmarked'},
-		{ model = 'fbi', label = 'Buffalo Unmarked'}
+
 	},
 
 	boss = {
-		{ model = 'police', label = 'Cruiser'},
-		{ model = 'police2', label = 'Buffalo'},
-		{ model = 'police3', label = 'Interceptor'},
-		{ model = 'policeb', label = 'Moto'},
-		{ model = 'police4', label = 'Cruiser Unmarked'},
-		{ model = 'fbi', label = 'Buffalo Unmarked'},
-		{ model = 'fbi2', label = 'SUV Unmarked'}
+
 	}
 }
+
 
 -- CHECK SKINCHANGER CLIENT MAIN.LUA for matching elements
 

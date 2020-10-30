@@ -131,6 +131,7 @@ Citizen.CreateThread(function ()
   end
 end)
 
----------------------------------
---------- ikNox#6088 ------------
----------------------------------
+RegisterNetEvent('esx_duty:offduty')
+AddEventHandler('esx_duty:garage', function()
+
+end)

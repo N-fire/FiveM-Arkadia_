@@ -4,26 +4,31 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FiveM | Loadingscreen</title>
+    <title>FiveM | Prometheus RP - Chargement en cours...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="keks.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
 </head>
 <body>
     
-    <h1 class="enable_music">Utilisez la <strong>barre d'espace</strong> pour faire mettre en pause la musique</h1>
+    <h1 class="enable_music">Utilisez la <strong>barre d'espace</strong> pour mettre en route la musique</h1>
 
-    <h1 class="servername"><strong>Arkadia</strong> RôlePlay</h1>
+    <h1 class="servername"><strong>Prometheus RP</strong> DEV</h1>
     <h1 class="undertext">Chargement en cours...</h1>
     
     <div class="overcast"></div>
     <div class="progress"></div>
 
-    <audio id="leson" src="music/music.ogg" autoplay="true" hidden="true" loop="true"/>
-    <script>
+    <audio id="audio" autoplay>
+        <source src="music/music.ogg" type="audio/ogg">
+    </audio>
 
+<script>
+var myaudio = document.getElementById("audioID").autoplay = true;
+</script>
+    <script>
     var play = false;
-    var myAudio = document.getElementById("leson");
+    var myAudio = document.getElementById("audio");
     
     myAudio.volume = 0.1;
 

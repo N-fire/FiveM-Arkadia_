@@ -114,17 +114,17 @@ Citizen.CreateThread(function()
     end
 end)
 
-Citizen.CreateThread(function()
-  while true do
-  Citizen.Wait(0)
-    if not beltOn and wasInCar == true then
+-- Citizen.CreateThread(function()
+--   while true do
+--   Citizen.Wait(0)
+--     if not beltOn and wasInCar == true then
 
-                TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.3, 'seatbelt', 0.2)
-                Citizen.Wait(9000)
-    end
+--                 TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 0.3, 'seatbelt', 0.2)
+--                 Citizen.Wait(9000)
+--     end
 
-end
-end)
+-- end
+-- end)
 
 RegisterNetEvent("seatbelt:notify")
 AddEventHandler("seatbelt:notify", function(msg)
